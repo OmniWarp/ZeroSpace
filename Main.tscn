@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnm7gayop2c5d"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_a7n7o"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_umieb"]
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_a7n7o")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.8167, 0, 0, 0, 0.0567998, 0, 0, 0, 10.8167, 0, -0.5907, 0)
+mesh = SubResource("CylinderMesh_umieb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 539.0
+offset_top = 263.0
+offset_right = 622.0
+offset_bottom = 294.0
+text = "ENTER VR"
